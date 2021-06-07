@@ -13,11 +13,11 @@ public class Cryptography {
 			CryptographySecretKeyIv secretKeyIv = AESCryptographySecretKeyIvBuilder.read("yourfile.properties").build();
 
 			Cryptor cryptorAES = AESCryptographyBuilder
-									.usingMode(AESVariation.CBC)
-									.withPadding(AESPadding.PKCS5PADDING)
-									.usingSecretKey(secretKeyIv.getSecretKey())
-									.withIV(secretKeyIv.getIV())
-								.build();
+						.usingMode(AESVariation.CBC)
+						.withPadding(AESPadding.PKCS5PADDING)
+						.usingSecretKey(secretKeyIv.getSecretKey())
+						.withIV(secretKeyIv.getIV())
+					     .build();
 
 			String encrypt = cryptorAES.encrypt("AESCryptography Test");
 			String decrypt = cryptorAES.decrypt(encrypt);
