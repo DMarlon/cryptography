@@ -9,7 +9,7 @@ public class CryptographySecretKeyIv {
 	private final IvParameterSpec iv;
 
 	public CryptographySecretKeyIv(SecretKey key, IvParameterSpec iv)  {
-		if (key == null && iv == null)
+		if (key == null || iv == null)
 			throw new IllegalArgumentException("key and iv is required");
 
 		this.key =  key;
