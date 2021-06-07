@@ -50,7 +50,7 @@ public class AESCryptographySecretKeyIvBuilder {
 		try {
 			return new IvParameterSpec(iv.getBytes("UTF-8"));
 		} catch (UnsupportedEncodingException exception) {
-			throw new GenerateSecretException(exception.getMessage());
+			throw new GenerateSecretException(exception.getMessage(), exception);
 		}
 	}
 }

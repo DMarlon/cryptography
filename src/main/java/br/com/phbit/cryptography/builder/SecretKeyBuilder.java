@@ -72,7 +72,7 @@ public class SecretKeyBuilder {
 
 			return new SecretKeySpec(factory.generateSecret(spec).getEncoded(), keyAlgorithm.getInitials());
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException exception) {
-			throw new GenerateSecretException(exception.getMessage());
+			throw new GenerateSecretException(exception.getMessage(), exception);
 		}
 	}
 
